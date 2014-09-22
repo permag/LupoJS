@@ -17,33 +17,35 @@
         var view = document.getElementById('view');
         var $model = {
                 person: personModel()
-            };
+        };
+        render('./part.html', view, $model);
+    }
 
+    function render(template, view, $model) {
         $.ajax({
-            url: './part.html',
+            url: template,
             method: 'GET',
-            success: function (template) {
-                view.innerHTML = templateGenerator(template, $model);
+            cache: false,
+            success: function (html) {
+                view.innerHTML = htmlGenerator(html, $model);
             },
             error: function () {
                 console.log('Error...');
             }
         });
-    }
+    } 
 
-
-    function templateGenerator(template, $model) {
-        var re = /{{([^}}]+)?}}/g,
+    function htmlGenerator(html, $model) {
+        var re = /{{([^}}]+)?}}/,
             bracket = '',
             member = '';
-        while (match = re.exec(template)) {
+        while (match = re.exec(html)) {
             bracket = match[0];
             member = $.trim(match[1]);
             var fu = new Function('member', '$model', 'return $model.' + member + ';');
-            console.log(member);
-            template = template.replace(bracket, fu(member, $model));
+            html = html.replace(bracket, fu(member, $model));
         }
-        return template;
+        return html;
     }
 
     init();
