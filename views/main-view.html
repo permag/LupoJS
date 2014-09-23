@@ -1,10 +1,18 @@
 Example usage:
-<h2><%= person.name %></h2>
-<p>Age: <%= person.age %></p>
-<p>Houses: <%= person.houses.summer %></p>
-<p>Phones: <%= person.phones[0] %>, <%= person.phones[1] %></p>
+<ul>
+<% for (var i=0; i<data.length; i+=1) { %>
+	<li><%= data[i].person.name %></li>
+<% } %>
+</ul>
+
+<h2><%= data[0].person.name %></h2>
+<p>Age: <%= data[0].person.age %></p>
+<p>Houses: <%= data[0].person.houses.summer %></p>
+<p>Phones: <%= data[0].person.phones[0] %>, <%= data[0].person.phones[1] %></p>
 
 <h4>Loop</h4>
-<% for (var i=0; i<person.phones.length; i+=1){ %>
-	<p>Phone <%= i+1 %>: <%= person.phones[i] %></p>
+<ul>
+<% for (var i=0; i<data[0].person.phones.length; i+=1) { %>
+	<li>Phone <%= i+1 %>: <%= data[0].person.phones[i] %></li>
 <% } %>
+</ul>

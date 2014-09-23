@@ -1,16 +1,34 @@
 [
     {
         "person": {
-            "name": "John Smithn",
-            "age": 55,
+            "name": "Homer Simpson",
+            "age": 40,
             "phones": [
                 "555-1234",
                 "555-5678",
                 "555-9877"
             ],
             "houses": {
-                "resident": "Uddevalla",
-                "summer": "Visby",
+                "resident": "Springfield",
+                "summer": "Doh...",
+                "ob": {
+                    "test": "test"
+                }
+            }
+        }
+    },
+    {
+        "person": {
+            "name": "Peter Griffin",
+            "age": 47,
+            "phones": [
+                "555-9654",
+                "555-6558",
+                "555-3445"
+            ],
+            "houses": {
+                "resident": "Quahog",
+                "summer": "Massachusetts",
                 "ob": {
                     "test": "test"
                 }
