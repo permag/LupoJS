@@ -1,0 +1,20 @@
+[
+    {
+        "person": {
+            "name": "Sven Svensson",
+            "age": 65,
+            "phones": [
+                "555-1234",
+                "555-5678",
+                "555-9877"
+            ],
+            "houses": {
+                "resident": "Morbacka",
+                "summer": "Hedemora",
+                "ob": {
+                    "test": "test"
+                }
+            }
+        }
+    }
+]
